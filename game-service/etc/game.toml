@@ -1,0 +1,6 @@
+[DATABASES]
+URL='sqlite+aiosqlite:db/mydb'
+DB_PATH = 'db/mydb'
+[GAME]
+MAX_GUESS = 6
+VALID_WORD_LENGTH = 5
