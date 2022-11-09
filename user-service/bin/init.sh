@@ -1,1 +1,1 @@
-sqlite3 ./db/userdb < ./db/user.sql
+sqlite3 ./db/userdb < ./db/usersql.sql
