@@ -1,6 +1,6 @@
 # CPSC-449-project2-practice
 
-The implementation of User Authentification.
+The implementation of User Authentification and Game Service.
 
 # Split into two services.
 
