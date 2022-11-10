@@ -7,6 +7,7 @@ The implementation of User Authentification.
 1. Set up the nginx server
 
     cd /etc/nginx/sites-enabled
+    
     sudo vim tutorial
 
 2. Updating the tutorial file, see tutorial-user-authentification
