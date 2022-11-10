@@ -1,6 +1,0 @@
-[DATABASES]
-URL='sqlite+aiosqlite:db/userdb'
-DB_PATH = 'db/userdb'
-[GAME]
-MAX_GUESS = 6
-VALID_WORD_LENGTH = 5

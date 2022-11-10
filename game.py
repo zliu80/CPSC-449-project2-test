@@ -23,8 +23,9 @@ gameService = GameService()
 # **************************************************************#
 @app.route('/')
 async def index():
-
-    return {"msg": "Welcome to the Wordle game."}
+    username = request.authorization.username
+    print(username)
+    return {"msg": "Welcome to the Wordle game.", "username": username}
 
 
 # **************************************************************#
@@ -36,7 +37,8 @@ async def start_new_game():
     data = None
     try:
         # Get the username from client
-        username = request.args.get('username')
+        #username = request.args.get('username')
+        username = request.authorization.username
         if username is None:
             return {"msg": "To start a new game, the username must be provided."}
 
@@ -84,7 +86,8 @@ def word_analysis(word, correct_word):
 async def guess():
     msg = ""
     words_analysis_list = None
-    username = request.args.get('username')
+    #username = request.args.get('username')
+    username = request.authorization.username
     game_id = request.args.get("game_id")
     word = request.args.get('word')
     if username is None:
@@ -166,7 +169,8 @@ async def guess():
 async def allGame():
     listGame = []
     try:
-        username = request.args.get('username')
+        #username = request.args.get('username')
+        username = request.authorization.username
         if username is None:
             return {"msg": "Require an username to do this search."}
 
