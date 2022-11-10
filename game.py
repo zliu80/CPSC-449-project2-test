@@ -9,28 +9,27 @@ from service.DBServiceModule import DBService
 app = Quart(__name__)
 QuartSchema(app)
 
-app.config.from_file(f"etc/game.toml", toml.load)
-# app.config.from_file(f"etc/{__name__}.toml", toml.load)
+# For testing in pycharm
+#app.config.from_file(f"etc/game.toml", toml.load)
+app.config.from_file(f"etc/{__name__}.toml", toml.load)
 DBService.db_url = app.config["DATABASES"]["URL"]
 DBService.db_path = app.config['DATABASES']["DB_PATH"]
 gameService = GameService()
 
-# **************************************************************#
-# **************************** User ****************************#
-# **************************************************************#
-# **************************************************************#
-# **************************** User ****************************#
-# **************************************************************#
-@app.route('/')
-async def index():
-    username = request.authorization.username
-    print(username)
-    return {"msg": "Welcome to the Wordle game.", "username": username}
+
+
 
 
 # **************************************************************#
 # **************************** Game ****************************#
 # **************************************************************#
+
+@app.route('/')
+async def index():
+    username = request.authorization.username
+    return {"authentificated user":username, "msg": "Welcome to the Wordle game. To play the game, you may visit http://tuffix-vm/docs to see the API, or see README.md"}
+    
+    
 @app.route('/startgame')
 async def start_new_game():
     msg = ""
@@ -238,8 +237,7 @@ def conflict(e):
 
 if __name__ == '__main__':
     try:
-        DBService.db_url = app.config["DATABASES"]["URL"]
-        DBService.db_path = app.config['DATABASES']["DB_PATH"]
+
         if DBService.db_url is None or DBService.db_path is None:
             print("The system initialization failed! Check the db address.")
 
