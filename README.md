@@ -21,3 +21,11 @@ The implementation of User Authentification.
 visit http://tuffix-vm, you will there will be an authentification dialog.
 
 <img width="1223" alt="image" src="https://user-images.githubusercontent.com/98377452/200998703-dbe7bab7-2e57-4200-8a45-55154ff4e5c7.png">
+
+# Features
+
+You will be able to register without authentification.
+
+try http://tuffix-vm/register?username = & password =
+
+You won't be able to visit other functions unless you logged in.
