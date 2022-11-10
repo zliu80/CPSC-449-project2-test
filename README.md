@@ -2,6 +2,12 @@
 
 The implementation of User Authentification.
 
+# Split into two services.
+
+user.py is for User Service, database userdb file in var/primary/mount/
+
+game.py is for Game Service, database gamedb file in var/primary/mount/
+
 # Instructions
 
 1. Set up the nginx server
@@ -119,4 +125,5 @@ Project 2:
 Project 1: 
 
     http://localhost:5000/retrievegame?game_id=1
+
 
