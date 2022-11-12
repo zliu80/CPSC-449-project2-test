@@ -40,7 +40,7 @@ game.py is for Game Service, database gamedb file in var/primary/mount/
                     proxy_set_header X-Original-Host $host;
             }
 
-            location ~ ^/(login|login_required|logged-in|logout)$ {
+            location ~ ^/(register)$ {
                     proxy_pass http://localhost:5000;
                     proxy_set_header X-Original-URI $request_uri;
                     proxy_set_header X-Original-Remote-Addr $remote_addr;
