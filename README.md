@@ -10,7 +10,7 @@ game.py is for Game Service, database gamedb file in var/primary/mount/
 
 # Instructions
 
-Before you start, you should note that our Auth service is running on localhost:5100, Game service is running on localhost:5000. After setup, the Nginx server will not let you to visit the Game service unless you pass the Auth.
+Before you start, you should note that our Auth service is running on localhost:5000, Game service is running on localhost:5100. After setup, the Nginx server will not let you to visit the Game service unless you pass the Auth.
 
 1. Set up the nginx server
 
